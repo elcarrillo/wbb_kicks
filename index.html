@@ -4,45 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WBB Kicks</title>
-<meta name="description" content="Every shoe worn in women's basketball, college and pro.">
+<meta name="description" content="Women's college basketball shoe data: PEs, signature shoes and what players wear in real games.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="eyebrow">Women's basketball · College &amp; pro</div>
-    <h1>WBB <span>Kicks</span></h1>
-    <p class="lede">Every shoe worn in women's basketball: signatures, player exclusives and everything else on court, each tied to a source.</p>
-  </header>
-
-  <nav class="tabs" role="tablist" aria-label="Views">
-    <button type="button" role="tab" id="tab-shoes" data-view="shoes" aria-selected="true">Shoes</button>
-    <button type="button" role="tab" id="tab-log" data-view="log" aria-selected="false">Game log</button>
-  </nav>
-
-  <div class="bar">
-    <input type="search" id="q" placeholder="Search player, team, shoe or brand" aria-label="Search">
-    <div class="seg" role="group" aria-label="Type" id="type-filter">
-      <button type="button" data-v="all" aria-pressed="true">All</button>
-      <button type="button" data-v="signature" aria-pressed="false">Signature</button>
-      <button type="button" data-v="pe" aria-pressed="false">PE</button>
-      <button type="button" data-v="general" aria-pressed="false">General</button>
-    </div>
-    <div class="seg" role="group" aria-label="League" id="league-filter">
-      <button type="button" data-v="all" aria-pressed="true">All</button>
-      <button type="button" data-v="WNBA" aria-pressed="false">WNBA</button>
-      <button type="button" data-v="NCAA" aria-pressed="false">College</button>
-    </div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="logo" href="#"><b>WBB <span>Kicks</span></b><small>Women's college basketball shoe data</small></a>
+    <nav class="mainnav" aria-label="Main">
+      <a href="#games" data-nav="games">Games</a>
+      <a href="#shoes" data-nav="shoes">Shoes</a>
+      <a href="#players" data-nav="players">Players</a>
+      <a href="#teams" data-nav="teams">Teams</a>
+      <a href="#brands" data-nav="brands">Brands</a>
+    </nav>
   </div>
-  <p class="count" id="count"></p>
-  <div class="log" id="out"></div>
+</header>
 
-  <footer>
-    <span>Data lives in <code>data/players.csv</code>, <code>data/shoes.csv</code>, <code>data/sightings.csv</code> and <code>data/sources.csv</code>. Every entry links to its sources.</span>
-  </footer>
-</div>
+<main class="wrap" id="app">
+  <p class="loading">Loading shoe data…</p>
+</main>
+
+<footer class="wrap site-footer">
+  <span>Every shoe, game and player move is tied to at least one source. Data lives in <code>data/*.csv</code>.</span>
+</footer>
 <script src="assets/app.js"></script>
 </body>
 </html>

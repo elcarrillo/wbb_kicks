@@ -17,7 +17,7 @@ All data lives in four CSV files you can edit in any spreadsheet app or on GitHu
 | File | One row is | Key columns |
 |---|---|---|
 | `data/players.csv` | a player | `id` (e.g. `juju-watkins`), `name`, `current_team`, `league` (`WNBA` or `NCAA`), `school` |
-| `data/shoes.csv` | a shoe or colorway | `id`, `brand`, `model`, `colorway`, `style_code`, `type` (`signature`, `pe` or `general`), `player_id` (whose shoe it is; blank for team PEs and general releases), `team_at_release`, `league`, `release_date` (`YYYY`, `YYYY-MM` or `YYYY-MM-DD`), `colors` (hex codes separated by `\|`), `note` |
+| `data/shoes.csv` | a shoe or colorway | `id`, `brand`, `model`, `colorway`, `style_code`, `type` (`signature`, `pe` or `general`), `player_id` (whose shoe it is; blank for team PEs and general releases), `team_at_release`, `league`, `wbb_confirmed` (`yes`, or `no` if a women's team hasn't been confirmed wearing it), `release_date` (`YYYY`, `YYYY-MM` or `YYYY-MM-DD`), `colors` (hex codes separated by `\|`), `note` |
 | `data/sightings.csv` | one player wearing one shoe in one game | `id`, `date`, `player_id`, `shoe_id`, `team_at_time`, `opponent`, `league`, `photo_url`, `note` |
 | `data/sources.csv` | one source backing one entry | `entry_type` (`shoe`, `sighting` or `player`), `entry_id`, `source`, `url` |
 
