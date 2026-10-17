@@ -1,25 +1,12 @@
 id,brand,model,colorway,style_code,type,player_id,team_at_release,teams,league,wbb_confirmed,release_date,colors,note
-nike-atwo,Nike,A'Two,,,signature,aja-wilson,Las Vegas Aces,Las Vegas Aces,WNBA,yes,2026-05-02,,Second signature shoe.
-nike-aone,Nike,A'One,,,signature,aja-wilson,Las Vegas Aces,Las Vegas Aces,WNBA,yes,2025,,First signature shoe.
-nike-sabrina-4,Nike,Sabrina 4,,,signature,sabrina-ionescu,New York Liberty,New York Liberty,WNBA,yes,2026-07,,Fourth model in her line.
-nike-caitlin-1,Nike,Caitlin 1,,,signature,caitlin-clark,Indiana Fever,Indiana Fever,WNBA,yes,2026-10-01,,First Nike signature; revealed June 2026.
-nike-kobe-protro-clark-pe,Nike,Kobe Protro PE,,,pe,caitlin-clark,Indiana Fever,Indiana Fever,WNBA,yes,,,Kobe Protro player exclusives worn before her signature launched.
-puma-stewie-5,Puma,Stewie 5,Mint Jelly/Black/Lemon Crush,312745-01,signature,breanna-stewart,New York Liberty,New York Liberty,WNBA,yes,2026-05-15,#9ee8c8|#111111|#f4e04d,Launch colorway.
-reebok-angel-reese-1,Reebok,Angel Reese 1,,,signature,angel-reese,Chicago Sky,Chicago Sky,WNBA,yes,2025-09-18,,Launched while she was with the Chicago Sky.
-holo-js01,Holo,JS:01,,,signature,jacy-sheldon,Connecticut Sun,Connecticut Sun,WNBA,yes,,,Launched while she was with the Connecticut Sun.
 nike-gt-cut-3-turbo-juju-pe,Nike,GT Cut 3 Turbo PE,Maroon/Gold,,pe,juju-watkins,USC,USC,NCAA,yes,2025-11,#7a1020|#f2b81c|#ffffff,Gold Swooshes and laces; flower stitched under the tongue. Gifted to USC teammates while she sat out 2025-26 with a torn ACL.
 puma-all-pro-nitro-2-flaujae-pe,Puma,All-Pro Nitro 2 PE,Tan/Brown Camo,,pe,flaujae-johnson,LSU,LSU,NCAA,yes,2026-02-06,#b59a72|#5e4630|#f28cb8|#3fae5a,Four-finger hand logo for her No. 4. Released at $140 during her senior season at LSU.
-nike-sabrina-1-oregon,Nike,Sabrina 1,Oregon (Malachite/Black-Lightening-Stadium Green),FQ3381-300,signature,sabrina-ionescu,New York Liberty,New York Liberty|Oregon,WNBA,yes,2024-03-14,#0b6b3a|#111111|#f5e03c,"Oregon-inspired colorway of her first signature shoe, a nod to her Ducks days. Retail $130."
-nike-sabrina-3-ducks-of-a-feather,Nike,Sabrina 3,Ducks of a Feather,,signature,sabrina-ionescu,New York Liberty,New York Liberty|Oregon,WNBA,yes,,#0b6b3a|#f5e03c,Green and yellow Oregon tribute colorway.
 nike-sabrina-2-oregon-pe,Nike,Sabrina 2 Oregon PE,"Green/Yellow, White/Green, Black/Yellow",,pe,,Oregon,Oregon,NCAA,no,2025-03,#0b6b3a|#f5e03c|#ffffff|#111111,"Three Oregon team colorways from the 2025 March Madness pack: green/yellow, white/green and black/yellow. Never released to the public."
 jordan-heir-kiki-rice-pe,Jordan,Heir Series PE,Blue/Yellow,,pe,kiki-rice,UCLA,UCLA,NCAA,yes,2025-01,#2d68c4|#f2c230,"PE of Jordan Brand's first women's basketball shoe, with ocean details and a sand-inspired outsole."
 air-jordan-38-low-kiki-rice-cherry-blossom,Jordan,Air Jordan 38 Low PE,Cherry Blossom,,pe,kiki-rice,UCLA,UCLA,NCAA,yes,,#8fc3ea|#f4a7c0,UCLA powder blue fading into cherry-blossom pinks.
 air-jordan-4-ucla-pe-2025,Jordan,Air Jordan 4 UCLA PE,Light Blue/White/Gold,,pe,,UCLA,UCLA,NCAA,no,2025-01,#8fc3ea|#ffffff|#c9a227,Light blue suede with gold Jumpman accents. Made for the team and never released to the public.
 air-jordan-38-bred,Jordan,Air Jordan 38,Black/White/Red,,general,,,,,yes,,#111111|#ffffff|#c8102e,
-nike-sabrina-1-quack-pe,Nike,Sabrina 1 Oregon PE,QUACK (Green/Yellow),,pe,sabrina-ionescu,New York Liberty,New York Liberty|Oregon,WNBA,yes,2023,#0b6b3a|#f5e03c,"Her own Oregon PE with ""QUACK"" on the side, worn on court in 2023. One pair was stolen from an opposing arena days after the Commissioner's Cup final."
 nike-sabrina-1-oregon-team-pe,Nike,Sabrina 1 Oregon PE,"Three team colorways, including Green/White/Black",,pe,,Oregon,Oregon,NCAA,yes,2024-01,#0b6b3a|#ffffff|#111111,"Three Oregon team colorways, including a green, white and black pair, worn by both the women's and men's teams. Made for the team and never sold to the public."
-nike-sabrina-2-oregon,Nike,Sabrina 2,Oregon (Green/Yellow),HQ4344-300,signature,sabrina-ionescu,New York Liberty,New York Liberty|Oregon,WNBA,yes,2024-10-24,#0b6b3a|#f5e03c,"Retail Oregon tribute colorway, $130."
-nike-sabrina-3-oregon-ducks,Nike,Sabrina 3,Oregon Ducks (Yellow/Green),IR2478-700,signature,sabrina-ionescu,New York Liberty,New York Liberty|Oregon,WNBA,yes,2026-03-12,#f5e03c|#0b6b3a,"Retail Oregon tribute colorway released for March Madness, $135."
 nike-sabrina-3-grateful-ducks-pe,Nike,Sabrina 3 Oregon PE,Grateful Ducks,,pe,,Oregon,Oregon,NCAA,yes,2026-01,#0b6b3a|#f5e03c|#e2462f|#7b3fa0,"Grateful Dead tribute with a tie-dye toe and heel, fuzzy green Swooshes and Grateful Duck branding on the tongue. Never released to the public."
 nike-lebron-soldier-9-oregon-wbb-pe,Nike,LeBron Soldier 9 Oregon PE,,,pe,,Oregon,Oregon,NCAA,no,2015-10,,"Made for the Oregon women's team, with the Puddles mascot on the back and a forest print on the straps."
 air-jordan-6-oregon-wbb-pe,Jordan,Air Jordan 6 Oregon PE,White/Neon Green,,pe,,Oregon,Oregon,NCAA,no,2019-03,,"Made for the Oregon women's team before March Madness: white leather upper with neon green on the outsole and lace toggle, and Jumpman embroidery on the lace shroud."
@@ -31,7 +18,6 @@ nike-kobe-3-low-protro-oregon-wbb-pe,Nike,Kobe 3 Low Protro Oregon PE,White cage
 nike-hyperdunk-x-low-sabrina-oregon-pe,Nike,Hyperdunk X Low Oregon PE,Oregon,,pe,sabrina-ionescu,Oregon,Oregon,NCAA,yes,,,"The shoe Sabrina wore throughout her Oregon career, in Ducks colorways. Its fit and support cables carried over into the Sabrina 1."
 nike-lebron-16-sabrina-oregon-pe,Nike,LeBron 16 Oregon PE,Oregon,,pe,sabrina-ionescu,Oregon,Oregon,NCAA,yes,,,Oregon colorway Sabrina wore at Oregon.
 nike-pg-2-5-sabrina-oregon-pe,Nike,PG 2.5 Oregon PE,Oregon,,pe,sabrina-ionescu,Oregon,Oregon,NCAA,yes,,,Ducks colorway Sabrina wore at Oregon.
-nike-kobe-ad-oregon,Nike,Kobe A.D.,Oregon (Black/Strike Yellow),922026-001,general,,Oregon,Oregon,NCAA,no,2017-03-10,,Retail Ducks colorway released for March Madness: a mostly black upper with yellow accents. $160.
 nike-lebron-20-oregon-pe,Nike,LeBron 20 Oregon PE,Green/Yellow,,pe,,Oregon,Oregon,NCAA,no,2022-12,,Part of Oregon's 2022-23 PE set: green and yellow with the duck mascot. Never sold to the public.
 nike-kd-15-oregon-pe,Nike,KD 15 Oregon PE,Green/Yellow,,pe,,Oregon,Oregon,NCAA,no,2022-12,,Part of Oregon's 2022-23 PE set: green and yellow with the duck mascot. Never sold to the public.
 nike-pg-6-oregon-pe,Nike,PG 6 Oregon PE,Green/Yellow,,pe,,Oregon,Oregon,NCAA,no,2022-12,,Part of Oregon's 2022-23 PE set: green and yellow with the duck mascot. Never sold to the public.
@@ -41,7 +27,6 @@ nike-kobe-9-em-oregon-pe,Nike,Kobe 9 EM Oregon PE,Three team colorways,,pe,,Oreg
 nike-book-1-oregon-pe,Nike,Book 1 Oregon PE,,,pe,,Oregon,Oregon,NCAA,no,2025-03,,School-themed Oregon PE from the 2024-25 set.
 nike-giannis-freak-6-oregon-pe,Nike,Giannis Freak 6 Oregon PE,Home and Away,,pe,,Oregon,Oregon,NCAA,no,2025-03,,"Home and away colorways matched to Oregon's uniforms, with paint-splattered midsoles."
 nike-kd-17-oregon-pe,Nike,KD 17 Oregon PE,Three team colorways,,pe,,Oregon,Oregon,NCAA,no,2025-03,,"Three colorways in Oregon team colors, from the 2024-25 PE set."
-nike-sabrina-3-oregon-duck-by-you,Nike,Sabrina 3,Oregon Duck (Nike By You),,signature,sabrina-ionescu,New York Liberty,New York Liberty|Oregon,WNBA,no,2025-11,,Colorway designed by the Oregon Duck mascot: loud green and neon with white and black accents and a hint of orange. Sold on Nike By You for $165.
 nike-ja-3-oregon-pe,Nike,Ja 3 Oregon PE,"Home, Away and Alternate",,pe,,Oregon,Oregon,NCAA,no,2026-03,,"One of seven models in Oregon's 2025-26 PE lineup, each made in home, away and alternate colorways."
 nike-kd-18-oregon-pe,Nike,KD 18 Oregon PE,"Home, Away and Alternate",,pe,,Oregon,Oregon,NCAA,no,2026-03,,"One of seven models in Oregon's 2025-26 PE lineup, each made in home, away and alternate colorways."
 nike-giannis-freak-7-oregon-pe,Nike,Giannis Freak 7 Oregon PE,"Home, Away and Alternate",,pe,,Oregon,Oregon,NCAA,no,2026-03,,"One of seven models in Oregon's 2025-26 PE lineup, each made in home, away and alternate colorways."

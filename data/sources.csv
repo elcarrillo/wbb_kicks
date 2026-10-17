@@ -1,17 +1,6 @@
 entry_type,entry_id,source,url
-shoe,nike-atwo,Complex,https://www.complex.com/sneakers/a/ben-felderstein/nike-atwo-a-two-aja-wilson-release-date-signature-sneaker-interview
-shoe,nike-aone,Complex,https://www.complex.com/sneakers/a/ian-stonebrook/every-wnba-signature-sneaker-ever-2026-edition
-shoe,nike-sabrina-4,Complex,https://www.complex.com/sneakers/a/zac-dubasik/nike-sabrina-4-everything-you-need-to-know
-shoe,nike-caitlin-1,Bleacher Report,https://www.bleacherreport.com/articles/25441490-caitlin-clark-reveals-release-date-1st-look-new-nike-signature-shoe-trending-video-photo
-shoe,nike-kobe-protro-clark-pe,Complex,https://www.complex.com/sneakers/a/ian-stonebrook/every-wnba-signature-sneaker-ever-2026-edition
-shoe,puma-stewie-5,Sneaker Bar Detroit,https://sneakerbardetroit.com/puma-stewie-5-312745-01/
-shoe,reebok-angel-reese-1,Complex,https://www.complex.com/sneakers/a/victor-deng/reebok-angel-reese-1-signature-shoe-release-date
-shoe,holo-js01,CBS Sports,https://www.cbssports.com/wnba/news/suns-jacy-sheldon-enjoying-dream-come-true-with-release-of-signature-shoe-she-helped-design
 shoe,nike-gt-cut-3-turbo-juju-pe,Sole Retriever,https://www.soleretriever.com/news/articles/juju-watkins-new-nike-gt-cut-3-turbo-pe-teammate-gifts
 shoe,puma-all-pro-nitro-2-flaujae-pe,Just Women's Sports,https://justwomenssports.com/reads/lsu-basketball-star-flaujae-johnson-drops-signature-puma-pe-sneaker/
-shoe,nike-sabrina-1-oregon,Sole Retriever,https://www.soleretriever.com/news/articles/nike-sabrina-1-oregon-w-release-date-spring-2024
-shoe,nike-sabrina-1-oregon,Sneaker Bar Detroit,https://sneakerbardetroit.com/nike-sabrina-1-oregon-ducks/
-shoe,nike-sabrina-3-ducks-of-a-feather,Sports Illustrated,https://www.si.com/college/oregon/news/sabrina-ionescu-repping-oregon-ducks-wnba-playoffs-new-york-liberty-satou-sabally-nike-sneakers-phoenix-mercury
 shoe,nike-sabrina-2-oregon-pe,Sneaker News,https://sneakernews.com/2025/03/07/oregon-ducks-nike-basketball-pe-2025/
 shoe,jordan-heir-kiki-rice-pe,Sports Illustrated,https://www.si.com/fannation/sneakers/news/ucla-bruins-guard-kiki-rice-unveils-player-exclusive-jordan-brand-shoes
 shoe,air-jordan-38-low-kiki-rice-cherry-blossom,Sports Illustrated,https://www.si.com/college/ucla/womens-basketball/ucla-womens-basketball-kiki-rice-shows-off-new-jordan-brand-cherry-blossom-shoe-mac4
@@ -19,17 +8,9 @@ shoe,air-jordan-38-low-kiki-rice-cherry-blossom,Sole Retriever,https://www.soler
 shoe,air-jordan-4-ucla-pe-2025,Sneaker News,https://sneakernews.com/2025/01/31/air-jordan-4-ucla-pe/
 shoe,air-jordan-4-ucla-pe-2025,Sole Retriever,https://www.soleretriever.com/news/articles/the-road-back-to-championship-and-sneaker-success-for-uclas-womens-basketball
 sighting,2023-03-25-kiki-rice-aj38,Sports Illustrated,https://www.si.com/fannation/sneakers/news/kiki-rice-debuts-air-jordan-38-in-ncaa-tournament
-sighting,2025-09-17-sabrina-ionescu-sabrina-3-ducks,Sports Illustrated,https://www.si.com/college/oregon/news/sabrina-ionescu-repping-oregon-ducks-wnba-playoffs-new-york-liberty-satou-sabally-nike-sneakers-phoenix-mercury
-sighting,2025-09-17-sabrina-ionescu-sabrina-3-ducks,Sports Illustrated (series schedule),https://www.si.com/wnba/liberty/news/new-york-liberty-face-off-against-mercury-open-2025-playoffs
 player,kiki-rice,247Sports,https://247sports.com/college/ucla/article/ucla-womens-basketball-bruins-wnba-draft-kiki-rice-selected-sixth-by-the-toronto-tempo-281372099/
 player,flaujae-johnson,LSU Athletics,https://lsusports.net/news/2026/04/13/johnson-selected-eighth-overall-in-wnba-draft-by-golden-state
-player,angel-reese,CBS Sports,https://www.cbssports.com/wnba/news/2026-wnba-free-agency-tracker/
-player,jacy-sheldon,The Sporting Tribune,https://www.thesportingtribune.com/2026/07/12/jacy-sheldon-sky
-shoe,nike-sabrina-1-quack-pe,CBS Sports,https://www.cbssports.com/wnba/news/new-york-liberty-star-sabrina-ionescu-says-two-of-her-exclusive-nike-shoes-were-stolen/
-shoe,nike-sabrina-1-quack-pe,Sports Illustrated,https://www.si.com/fannation/sneakers/off-court/the-nike-sabrina-1-releasing-in-oregon-ducks-colorway
 shoe,nike-sabrina-1-oregon-team-pe,Sports Illustrated,https://www.si.com/fannation/sneakers/news/sabrina-ionescus-nike-sneakers-gifted-to-oregon-ducks
-shoe,nike-sabrina-2-oregon,Sneaker News,https://sneakernews.com/2024/09/18/nike-sabrina-2-oregon-hq4344-300-release-date/
-shoe,nike-sabrina-3-oregon-ducks,Sneaker News,https://sneakernews.com/2026/02/24/nike-sabrina-3-oregon-ducks-ir2478-700/
 shoe,nike-sabrina-3-grateful-ducks-pe,Sole Retriever,https://www.soleretriever.com/news/articles/oregon-basketball-nike-sabrina-3-grateful-duck-pe
 shoe,nike-sabrina-3-grateful-ducks-pe,Sneaker News,https://sneakernews.com/2026/01/29/nike-sabrina-3-grateful-ducks-oregon/
 shoe,nike-sabrina-3-grateful-ducks-pe,Yahoo Sports,https://sports.yahoo.com/articles/oregon-womens-basketball-honoring-grateful-191141491.html
@@ -56,7 +37,6 @@ shoe,nike-lebron-16-sabrina-oregon-pe,Nice Kicks,https://www.nicekicks.com/?p=92
 shoe,nike-lebron-16-sabrina-oregon-pe,What Pros Wear,https://www.whatproswear.com/basketball/news/sabrina-ionescu-signs-multi-year-nike-sneaker-deal/
 shoe,nike-pg-2-5-sabrina-oregon-pe,What Pros Wear,https://www.whatproswear.com/basketball/news/sabrina-ionescu-signs-multi-year-nike-sneaker-deal/
 shoe,nike-sabrina-1-oregon-team-pe,Daily Emerald,https://dailyemerald.com/46460/sports/all-that-drip-is-green-and-yellow/
-shoe,nike-kobe-ad-oregon,Nice Kicks,https://www.nicekicks.com/nike-kobe-d-oregon-release-date/
 shoe,nike-lebron-20-oregon-pe,Sneaker Freaker,https://www.sneakerfreaker.com/news/nike-oregon-ducks-basketball-player-exclusives-2022-2023
 shoe,nike-kd-15-oregon-pe,Sneaker Freaker,https://www.sneakerfreaker.com/news/nike-oregon-ducks-basketball-player-exclusives-2022-2023
 shoe,nike-pg-6-oregon-pe,Sneaker Freaker,https://www.sneakerfreaker.com/news/nike-oregon-ducks-basketball-player-exclusives-2022-2023
@@ -73,7 +53,6 @@ shoe,nike-gt-cut-3-oregon-pe,Sole Retriever,https://www.soleretriever.com/news/a
 shoe,nike-kobe-5-oregon-pe,Sole Retriever,https://www.soleretriever.com/news/articles/university-of-oregon-basketball-nike-pes-2026-season-march-madness
 shoe,nike-sabrina-3-oregon-pe-2026,Sole Retriever,https://www.soleretriever.com/news/articles/university-of-oregon-basketball-nike-pes-2026-season-march-madness
 shoe,nike-lebron-23-oregon-pe,Sole Retriever,https://www.soleretriever.com/news/articles/university-of-oregon-basketball-nike-pes-2026-season-march-madness
-shoe,nike-sabrina-3-oregon-duck-by-you,Sports Illustrated,https://www.si.com/fannation/sneakers/news/oregon-duck-redesigned-sabrina-ionescu-nike-basketball-shoes
 shoe,nike-gt-future-doaf-metallic-nova,Flight Club,https://www.flightclub.com/article/gt-future-doaf-metallic-nova-pe
 shoe,nike-gt-future-doaf-metallic-nova,Sneaker Freaker,https://www.sneakerfreaker.com/performance/releases/flight-club-doaf-nike-gt-future-price-buy-release-date
 shoe,nike-gt-future-doaf-metallic-nova,Just Fresh Kicks,https://justfreshkicks.com/doaf-nike-gt-future/

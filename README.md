@@ -1,6 +1,6 @@
 # WBB Kicks
 
-Every shoe worn in women's basketball, college and pro: signatures, player exclusives and general releases, each tied to a source.
+Every shoe in women's college basketball: PEs made for college teams and players, plus any shoe a college player has worn in a game, each tied to a source.
 
 ## Why this exists
 
@@ -23,6 +23,7 @@ All data lives in five CSV files you can edit in any spreadsheet app or on GitHu
 | `data/photos.csv` | one photo of a shoe | `shoe_id`, `file` (a file name in `images/`, or a full `https://` link), `credit` (who took it or owns it), `credit_url` |
 
 Rules:
+- The site is college only. Pro and retail shoes are left out unless a college player wore them in a game; add that game to `sightings.csv` and the shoe shows up.
 - Every shoe and sighting needs at least one row in `sources.csv`. Add as many as you have; more sources make an entry more trustworthy.
 - `team_at_time` and `team_at_release` record where the player was then, so entries stay correct after transfers, drafts and trades. Update `current_team` in `players.csv` when a player moves, and add a `player` source for the move.
 - Wrap a field in double quotes if it contains a comma.
