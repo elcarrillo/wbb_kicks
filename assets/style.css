@@ -127,6 +127,12 @@ td.num:first-child { text-align: left; }
 .shoe-head { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; }
 .shoe-head .thumb { width: 88px; height: 88px; font-size: 40px; }
 .shoe-head .lede { margin: 0; }
+.photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+.photos figure { margin: 0; }
+.photos img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
+.photos figcaption { font: 12px var(--mono); color: var(--muted); margin-top: 6px; }
+.photos figcaption a { color: var(--ink); }
+img.thumb { object-fit: contain; background: #fff; border: 1px solid var(--line); }
 
 .tag { font: 600 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; border: 1.5px solid currentColor; white-space: nowrap; }
 .tag.sig { color: var(--sig); }

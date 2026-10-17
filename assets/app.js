@@ -48,7 +48,7 @@ function fmtDate(d) {
 // Newest first; entries with no date go last.
 const byDateDesc = key => (a, b) => (!a[key]) - (!b[key]) || (b[key] || "").localeCompare(a[key] || "");
 
-const db = { players: {}, shoes: [], shoesById: {}, sightings: [], sources: {}, teams: {}, brands: {} };
+const db = { players: {}, shoes: [], shoesById: {}, sightings: [], sources: {}, photos: {}, teams: {}, brands: {} };
 const app = document.getElementById("app");
 const ui = { q: "", type: "all" };
 
@@ -63,8 +63,14 @@ const leagueTag = l => l ? `<span class="tag lvl">${l === "NCAA" ? "College" : e
 const proTag = l => l && l !== "NCAA" ? leagueTag(l) : "";
 const unconfirmedTag = s => s.wbb_confirmed === "no" ? `<span class="tag lvl" title="Not yet confirmed as worn by a women's team">WBB unconfirmed</span>` : "";
 
+// A photo's file is either a name inside images/ or a full https URL.
+const photoSrc = ph => /^https?:\/\//.test(ph.file) ? ph.file : `images/${ph.file}`;
+const photoCredit = ph => ph.credit_url ? `<a href="${esc(ph.credit_url)}" target="_blank" rel="noopener">${esc(ph.credit)}</a>` : esc(ph.credit);
+
 function thumb(s) {
-  if (s.image_url) return `<img class="thumb" src="${esc(s.image_url)}" alt="${esc(shoeName(s))}" loading="lazy">`;
+  // The first photo listed for a shoe is its cover.
+  const ph = (db.photos[s.id] || [])[0];
+  if (ph) return `<img class="thumb" src="${esc(photoSrc(ph))}" alt="${esc(shoeName(s))}" loading="lazy">`;
   return `<span class="thumb ph ${TYPE_CLASS[s.type] || "gen"}" aria-hidden="true">${esc((s.brand || "?").slice(0, 1))}</span>`;
 }
 
@@ -247,7 +253,7 @@ const pages = {
   },
 
   shoe(id) {
-    const s = db.shoesById[id], p = db.players[s.player_id];
+    const s = db.shoesById[id], p = db.players[s.player_id], photos = db.photos[id] || [];
     const games = db.sightings.filter(g => g.shoe_id === id).sort(byDateDesc("date"));
     const facts = [
       ["Brand", brandLink(s.brand)], ["Type", typeTag(s)], ["League", leagueTag(s.league)],
@@ -258,6 +264,8 @@ const pages = {
     return `${crumbs(`<a href="#shoes">Shoes</a>`, esc(shoeName(s)))}
       <div class="shoe-head">${thumb(s)}<div><h1 class="page-title">${esc(shoeName(s))}</h1>${s.colorway ? `<p class="lede">${esc(s.colorway)}</p>` : ""}</div></div>
       ${s.note ? `<p class="callout">${esc(s.note)}</p>` : ""}
+      ${photos.length ? section("Photos", `<div class="photos">${photos.map(ph => `<figure>
+        <img src="${esc(photoSrc(ph))}" alt="${esc(shoeName(s))}" loading="lazy"><figcaption>Photo: ${photoCredit(ph)}</figcaption></figure>`).join("")}</div>`) : ""}
       <div class="cols">
         ${section("Details", `<dl class="facts">${facts.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>`)}
         ${section("Sources", `<p class="src">${sourceLinks("shoe", id) || "—"}</p>`)}
@@ -297,11 +305,12 @@ app.addEventListener("click", e => {
 });
 window.addEventListener("hashchange", () => { route(); window.scrollTo({ top: 0 }); });
 
-Promise.all(["players", "shoes", "sightings", "sources"].map(f => fetch(`data/${f}.csv`).then(r => {
+Promise.all(["players", "shoes", "sightings", "sources", "photos"].map(f => fetch(`data/${f}.csv`).then(r => {
   if (!r.ok) throw new Error(`Couldn't load data/${f}.csv (${r.status})`);
   return r.text();
-}).then(parseCSV))).then(([players, shoes, sightings, sources]) => {
+}).then(parseCSV))).then(([players, shoes, sightings, sources, photos]) => {
   sources.forEach(x => (db.sources[`${x.entry_type}:${x.entry_id}`] ||= []).push(x));
+  photos.filter(ph => ph.file).forEach(ph => (db.photos[ph.shoe_id] ||= []).push(ph));
   players.forEach(p => db.players[p.id] = p);
   db.shoes = shoes;
   shoes.forEach(s => { db.shoesById[s.id] = s; db.brands[slug(s.brand)] = s.brand; });
