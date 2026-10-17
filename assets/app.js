@@ -79,6 +79,7 @@ function renderShoes() {
       <div class="tags">
         <span class="tag ${TYPE_CLASS[s.type] || "gen"}">${esc(TYPE_LABEL[s.type] || s.type)}</span>
         <span class="tag lvl">${s.league === "NCAA" ? "College" : esc(s.league)}</span>
+        ${s.wbb_confirmed === "no" ? `<span class="tag lvl" title="Not yet confirmed as worn by a women's team">WBB unconfirmed</span>` : ""}
       </div>
       <div class="shoe">${esc(shoeName(s))}${s.colorway ? ` <span class="meta">“${esc(s.colorway)}”</span>` : ""}</div>
       ${s.note ? `<p class="note">${esc(s.note)}</p>` : ""}
