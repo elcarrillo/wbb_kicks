@@ -94,7 +94,9 @@ function ranked(rows, total) {
 function shoeCard(s) {
   const p = db.players[s.player_id];
   const who = p ? `${playerLink(p)}${s.team_at_release ? ` · ${teamLink(s.team_at_release)}` : ""}`
-    : s.team_at_release ? `${teamLink(s.team_at_release)} team PE` : "General release";
+    : s.team_at_release ? `${teamLink(s.team_at_release)} team PE`
+    // A pack sent to several schools lists them all.
+    : teamsOf(s).length ? `${teamsOf(s).map(teamLink).join(", ")} team PE` : "General release";
   return `<article class="card">
     <div class="card-top">${thumb(s)}<div class="tags">${typeTag(s)}${unconfirmedTag(s)}</div></div>
     <h3 class="shoe"><a href="#shoe-${esc(s.id)}">${esc(shoeName(s))}</a></h3>
@@ -319,7 +321,7 @@ Promise.all(["players", "shoes", "sightings", "sources", "photos"].map(f => fetc
   };
   players.forEach(p => { addTeam(p.current_team, p.league); addTeam(p.school, "NCAA"); });
   sightings.forEach(g => addTeam(g.team_at_time, g.league));
-  shoes.forEach(s => teamsOf(s).forEach(t => addTeam(t, t === s.team_at_release ? s.league : "")));
+  shoes.forEach(s => teamsOf(s).forEach(t => addTeam(t, t === s.team_at_release || !s.team_at_release ? s.league : "")));
   route();
 }).catch(err => {
   app.innerHTML = `<p class="empty">${esc(err.message)}. If you opened this file directly, run it through a local server or GitHub Pages instead.</p>`;
