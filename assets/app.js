@@ -34,8 +34,8 @@ const TYPE_CLASS = { signature: "sig", pe: "pe", general: "gen" };
 const shoeName = s => s.model?.startsWith("Air Jordan") || s.model?.startsWith(s.brand) ? s.model : `${s.brand} ${s.model}`;
 const teamsOf = s => (s.teams || "").split("|").filter(Boolean);
 const plural = (n, one, many = one + "s") => `${n} ${n === 1 ? one : many}`;
-// The site's catalog is college-only: a shoe shows there if it's a college release or a college game logged it.
-const isCollege = s => s.league === "NCAA" || db.sightings.some(g => g.shoe_id === s.id && g.league === "NCAA");
+// The site is college-only: a shoe belongs if it's a college PE or a college game logged it.
+const isCollege = s => (s.type === "pe" && s.league === "NCAA") || db.sightings.some(g => g.shoe_id === s.id && g.league === "NCAA");
 
 function fmtDate(d) {
   if (!d) return "—";
@@ -54,13 +54,12 @@ const ui = { q: "", type: "all" };
 
 // ---------- links and small pieces ----------
 const playerLink = p => p ? `<a href="#player-${esc(p.id)}">${esc(p.name)}</a>` : "";
-const teamLink = t => t ? `<a href="#team-${slug(t)}">${esc(t)}</a>` : "";
+// Only college teams have pages; a pro team is plain text.
+const teamLink = t => !t ? "" : db.teams[slug(t)]?.league === "NCAA" ? `<a href="#team-${slug(t)}">${esc(t)}</a>` : esc(t);
 const brandLink = b => `<a href="#brand-${slug(b)}">${esc(b)}</a>`;
 const shoeLink = s => `<a href="#shoe-${esc(s.id)}">${esc(shoeName(s))}</a>`;
 const typeTag = s => `<span class="tag ${TYPE_CLASS[s.type] || "gen"}">${esc(TYPE_LABEL[s.type] || "Shoe")}</span>`;
-// College is the default on this site, so only pro shoes get a league tag on cards.
 const leagueTag = l => l ? `<span class="tag lvl">${l === "NCAA" ? "College" : esc(l)}</span>` : "";
-const proTag = l => l && l !== "NCAA" ? leagueTag(l) : "";
 const unconfirmedTag = s => s.wbb_confirmed === "no" ? `<span class="tag lvl" title="Not yet confirmed as worn by a women's team">WBB unconfirmed</span>` : "";
 
 // A photo's file is either a name inside images/ or a full https URL.
@@ -97,7 +96,7 @@ function shoeCard(s) {
   const who = p ? `${playerLink(p)}${s.team_at_release ? ` · ${teamLink(s.team_at_release)}` : ""}`
     : s.team_at_release ? `${teamLink(s.team_at_release)} team PE` : "General release";
   return `<article class="card">
-    <div class="card-top">${thumb(s)}<div class="tags">${typeTag(s)}${proTag(s.league)}${!isCollege(s) && s.player_id && teamsOf(s).some(t => t === db.players[s.player_id]?.school) ? `<span class="tag lvl">Alumni</span>` : ""}${unconfirmedTag(s)}</div></div>
+    <div class="card-top">${thumb(s)}<div class="tags">${typeTag(s)}${unconfirmedTag(s)}</div></div>
     <h3 class="shoe"><a href="#shoe-${esc(s.id)}">${esc(shoeName(s))}</a></h3>
     ${s.colorway ? `<div class="colorway">${esc(s.colorway)}</div>` : ""}
     <div class="who">${who}</div>
@@ -192,14 +191,14 @@ const pages = {
   },
 
   teams() {
-    const rows = Object.entries(db.teams).map(([k, t]) => ({
-      k, t, shoes: db.shoes.filter(s => teamsOf(s).includes(t.name)),
+    const rows = Object.entries(db.teams).filter(([, t]) => t.league === "NCAA").map(([k, t]) => ({
+      k, t, shoes: db.shoes.filter(s => isCollege(s) && teamsOf(s).includes(t.name)),
       games: db.sightings.filter(g => g.team_at_time === t.name).length,
     })).filter(r => r.shoes.length || r.games)
-      .sort((a, b) => (a.t.league === "NCAA" ? 0 : 1) - (b.t.league === "NCAA" ? 0 : 1) || b.shoes.length - a.shoes.length || a.t.name.localeCompare(b.t.name));
+      .sort((a, b) => b.shoes.length - a.shoes.length || a.t.name.localeCompare(b.t.name));
     return `${crumbs("Teams")}<h1 class="page-title">Teams</h1>
-      <div class="table-wrap"><table><thead><tr><th>Team</th><th>League</th><th class="num">Shoes</th><th class="num">PEs</th><th class="num">Games</th></tr></thead>
-      <tbody>${rows.map(r => `<tr><td><a href="#team-${r.k}">${esc(r.t.name)}</a></td><td>${leagueTag(r.t.league)}</td>
+      <div class="table-wrap"><table><thead><tr><th>Team</th><th class="num">Shoes</th><th class="num">PEs</th><th class="num">Games</th></tr></thead>
+      <tbody>${rows.map(r => `<tr><td><a href="#team-${r.k}">${esc(r.t.name)}</a></td>
         <td class="num">${r.shoes.length}</td><td class="num">${r.shoes.filter(s => s.type === "pe").length}</td><td class="num">${r.games}</td></tr>`).join("")}</tbody></table></div>`;
   },
 
@@ -209,30 +208,27 @@ const pages = {
 
   player(id) {
     const p = db.players[id];
-    const shoes = db.shoes.filter(s => s.player_id === id).sort(byDateDesc("release_date"));
+    const shoes = db.shoes.filter(s => s.player_id === id && isCollege(s)).sort(byDateDesc("release_date"));
     const games = db.sightings.filter(g => g.player_id === id).sort(byDateDesc("date"));
     const latest = games[0] && db.shoesById[games[0].shoe_id];
     const sub = [p.current_team && `Now: ${teamLink(p.current_team)}`, p.school && `College: ${teamLink(p.school)}`].filter(Boolean).join(" · ");
     return `${crumbs(`<a href="#players">Players</a>`, esc(p.name))}
       <h1 class="page-title">${esc(p.name)}</h1><p class="lede">${sub}</p>
       ${latest ? `<p class="callout">In the latest logged game, ${esc(p.name)} wore ${shoeLink(latest)}.</p>` : ""}
-      ${tiles([[shoes.length, "Shoes"], [shoes.filter(s => s.type === "pe").length, "PEs"], [shoes.filter(s => s.type === "signature").length, "Signature colorways"], [games.length, "Games logged"]])}
-      ${shoes.some(isCollege) ? section("College", shoeGrid(shoes.filter(isCollege))) : ""}
-      ${shoes.some(s => !isCollege(s)) ? section("Pro career", shoeGrid(shoes.filter(s => !isCollege(s)))) : ""}
+      ${tiles([[shoes.length, "Shoes"], [shoes.filter(s => s.type === "pe").length, "PEs"], [games.length, "Games logged"]])}
+      ${section("Shoes", shoeGrid(shoes))}
       ${section("Game-by-game", gameTable(games, { showWho: false }))}
       ${db.sources[`player:${id}`] ? `<p class="src-line">Team info: ${sourceLinks("player", id)}</p>` : ""}`;
   },
 
   team(key) {
     const t = db.teams[key];
-    const all = db.shoes.filter(s => teamsOf(s).includes(t.name)).sort(byDateDesc("release_date"));
-    // A college team's page includes alumni's pro shoes made in its colors (like Sabrina's Oregon PEs).
-    const shoes = all;
+    const shoes = db.shoes.filter(s => isCollege(s) && teamsOf(s).includes(t.name)).sort(byDateDesc("release_date"));
     const games = db.sightings.filter(g => g.team_at_time === t.name).sort(byDateDesc("date"));
     const alumni = Object.values(db.players).filter(p => p.school === t.name || p.current_team === t.name);
     return `${crumbs(`<a href="#teams">Teams</a>`, esc(t.name))}
       <h1 class="page-title">${esc(t.name)}</h1>
-      <p class="lede">${t.league === "NCAA" ? "College" : esc(t.league)} · every shoe tied to this team, PEs and tribute colorways included.</p>
+      <p class="lede">Every PE made for this team and every shoe its players wore in a logged game.</p>
       ${tiles([[shoes.length, "Shoes"], [shoes.filter(s => s.type === "pe").length, "PEs"], [games.length, "Games logged"], [alumni.length, "Players"]])}
       <div class="cols">
         ${section("Shoes", shoeGrid(shoes))}
