@@ -31,11 +31,15 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": 
 const slug = s => String(s).toLowerCase().normalize("NFD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const TYPE_LABEL = { signature: "Signature", pe: "PE", general: "General release" };
 const TYPE_CLASS = { signature: "sig", pe: "pe", general: "gen" };
-const shoeName = s => s.model?.startsWith("Air Jordan") || s.model?.startsWith(s.brand) ? s.model : `${s.brand} ${s.model}`;
+// Skip the brand when the model already starts with it (Jordan Tatum 1, Curry 12 from Curry Brand).
+const shoeName = s => s.model?.startsWith("Air Jordan") || s.model?.startsWith((s.brand || "").split(" ")[0]) ? s.model : `${s.brand} ${s.model}`;
 const teamsOf = s => (s.teams || "").split("|").filter(Boolean);
 const plural = (n, one, many = one + "s") => `${n} ${n === 1 ? one : many}`;
 // The site is college-only: a shoe belongs if it's a college PE or a college game logged it.
 const isCollege = s => (s.type === "pe" && s.league === "NCAA") || db.sightings.some(g => g.shoe_id === s.id && g.league === "NCAA");
+// A player's or team's shoes: the ones made for them, plus any retail pair they wore in a logged game.
+const playerShoes = id => db.shoes.filter(s => isCollege(s) && (s.player_id === id || db.sightings.some(g => g.shoe_id === s.id && g.player_id === id)));
+const teamShoes = name => db.shoes.filter(s => isCollege(s) && (teamsOf(s).includes(name) || db.sightings.some(g => g.shoe_id === s.id && g.team_at_time === name)));
 
 function fmtDate(d) {
   if (!d) return "—";
@@ -94,7 +98,9 @@ function ranked(rows, total) {
 function shoeCard(s) {
   const p = db.players[s.player_id];
   const who = p ? `${playerLink(p)}${s.team_at_release ? ` · ${teamLink(s.team_at_release)}` : ""}`
-    : s.team_at_release ? `${teamLink(s.team_at_release)} team PE` : "General release";
+    : s.team_at_release ? `${teamLink(s.team_at_release)} team PE`
+    // A pack sent to several schools lists them all.
+    : teamsOf(s).length ? `${teamsOf(s).map(teamLink).join(", ")} team PE` : "General release";
   return `<article class="card">
     <div class="card-top">${thumb(s)}<div class="tags">${typeTag(s)}${unconfirmedTag(s)}</div></div>
     <h3 class="shoe"><a href="#shoe-${esc(s.id)}">${esc(shoeName(s))}</a></h3>
@@ -181,7 +187,7 @@ const pages = {
 
   players() {
     const rows = Object.values(db.players).map(p => ({
-      p, shoes: db.shoes.filter(s => s.player_id === p.id).length,
+      p, shoes: playerShoes(p.id).length,
       games: db.sightings.filter(g => g.player_id === p.id).length,
     })).sort((a, b) => b.shoes - a.shoes || a.p.name.localeCompare(b.p.name));
     return `${crumbs("Players")}<h1 class="page-title">Players</h1>
@@ -192,7 +198,7 @@ const pages = {
 
   teams() {
     const rows = Object.entries(db.teams).filter(([, t]) => t.league === "NCAA").map(([k, t]) => ({
-      k, t, shoes: db.shoes.filter(s => isCollege(s) && teamsOf(s).includes(t.name)),
+      k, t, shoes: teamShoes(t.name),
       games: db.sightings.filter(g => g.team_at_time === t.name).length,
     })).filter(r => r.shoes.length || r.games)
       .sort((a, b) => b.shoes.length - a.shoes.length || a.t.name.localeCompare(b.t.name));
@@ -208,7 +214,7 @@ const pages = {
 
   player(id) {
     const p = db.players[id];
-    const shoes = db.shoes.filter(s => s.player_id === id && isCollege(s)).sort(byDateDesc("release_date"));
+    const shoes = playerShoes(id).sort(byDateDesc("release_date"));
     const games = db.sightings.filter(g => g.player_id === id).sort(byDateDesc("date"));
     const latest = games[0] && db.shoesById[games[0].shoe_id];
     const sub = [p.current_team && `Now: ${teamLink(p.current_team)}`, p.school && `College: ${teamLink(p.school)}`].filter(Boolean).join(" · ");
@@ -223,7 +229,7 @@ const pages = {
 
   team(key) {
     const t = db.teams[key];
-    const shoes = db.shoes.filter(s => isCollege(s) && teamsOf(s).includes(t.name)).sort(byDateDesc("release_date"));
+    const shoes = teamShoes(t.name).sort(byDateDesc("release_date"));
     const games = db.sightings.filter(g => g.team_at_time === t.name).sort(byDateDesc("date"));
     const alumni = Object.values(db.players).filter(p => p.school === t.name || p.current_team === t.name);
     return `${crumbs(`<a href="#teams">Teams</a>`, esc(t.name))}
@@ -319,7 +325,7 @@ Promise.all(["players", "shoes", "sightings", "sources", "photos"].map(f => fetc
   };
   players.forEach(p => { addTeam(p.current_team, p.league); addTeam(p.school, "NCAA"); });
   sightings.forEach(g => addTeam(g.team_at_time, g.league));
-  shoes.forEach(s => teamsOf(s).forEach(t => addTeam(t, t === s.team_at_release ? s.league : "")));
+  shoes.forEach(s => teamsOf(s).forEach(t => addTeam(t, t === s.team_at_release || !s.team_at_release ? s.league : "")));
   route();
 }).catch(err => {
   app.innerHTML = `<p class="empty">${esc(err.message)}. If you opened this file directly, run it through a local server or GitHub Pages instead.</p>`;
