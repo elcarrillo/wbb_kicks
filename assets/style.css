@@ -159,3 +159,6 @@ img.thumb { object-fit: contain; background: #fff; border: 1px solid var(--line)
 .count { font: 12px var(--mono); color: var(--muted); margin: 0 0 10px; }
 
 .site-footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-block: 16px 32px; }
+
+.dev-note { background: var(--soft); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.dev-note .wrap { padding-block: 8px; }
