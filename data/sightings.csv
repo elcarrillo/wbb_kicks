@@ -2,14 +2,14 @@ id,date,player_id,shoe_id,team_at_time,opponent,league,photo_url,note
 2023-03-25-kiki-rice-aj38,2023-03-25,kiki-rice,air-jordan-38-white-black-red,UCLA,South Carolina,NCAA,,"Sweet 16, NCAA Tournament. Her Air Jordan 38 debut."
 2026-03-01-oregon-wbb-grateful-ducks,2026-03-01,,nike-sabrina-3-grateful-ducks-pe,Oregon,Washington,NCAA,,"Women's team debut of the Grateful Ducks PE, worn as a team."
 2024-02-04-kiki-rice-aj38-low,2024-02-04,kiki-rice,air-jordan-38-low-kiki-rice-cherry-blossom,UCLA,Stanford,NCAA,,"Debut of her first Jordan PE, at No. 4 Stanford."
-2025-01-26-kiki-rice-heir,2025-01-26,kiki-rice,jordan-heir-kiki-rice-pe,UCLA,Maryland,NCAA,,"Debut of her Heir PE in an 82-67 win at No. 8 Maryland."
-2026-04-05-kiki-rice-aj4028,2026-04-05,kiki-rice,air-jordan-4028-kiki-rice-ucla-pe,UCLA,South Carolina,NCAA,,"National championship game. UCLA won 79-51 for its first NCAA title."
+2025-01-26-kiki-rice-heir,2025-01-26,kiki-rice,jordan-heir-kiki-rice-pe,UCLA,Maryland,NCAA,,Debut of her Heir PE in an 82-67 win at No. 8 Maryland.
+2026-04-05-kiki-rice-aj4028,2026-04-05,kiki-rice,air-jordan-4028-kiki-rice-ucla-pe,UCLA,South Carolina,NCAA,,National championship game. UCLA won 79-51 for its first NCAA title.
 2016-04-05-breanna-stewart-kd-8-elite-uconn-pe,2016-04-05,breanna-stewart,nike-kd-8-elite-uconn-wbb-pe,UConn,Syracuse,NCAA,,"2016 NCAA championship game, her fourth straight national title."
 2022-04-03-paige-bueckers-kyrie-7,2022-04-03,paige-bueckers,nike-kyrie-7-navy-white-red,UConn,South Carolina,NCAA,,2022 NCAA championship game in Minneapolis.
-2024-12-07-paige-bueckers-gt-hustle-3-pe,2024-12-07,paige-bueckers,nike-gt-hustle-3-paige-bueckers-uconn-pe,UConn,Louisville,NCAA,,"On-court debut at the Women's Champions Classic at Barclays Center on release day; several teammates wore it too."
+2024-12-07-paige-bueckers-gt-hustle-3-pe,2024-12-07,paige-bueckers,nike-gt-hustle-3-paige-bueckers-uconn-pe,UConn,Louisville,NCAA,,On-court debut at the Women's Champions Classic at Barclays Center on release day; several teammates wore it too.
 2024-02-15-caitlin-clark-kobe-5-bruce-lee,2024-02-15,caitlin-clark,nike-kobe-5-protro-bruce-lee,Iowa,Michigan,NCAA,,Scored 49 to become the NCAA women's career scoring leader in a 106-89 win.
 2024-03-03-caitlin-clark-kobe-6-del-sol,2024-03-03,caitlin-clark,nike-kobe-6-protro-del-sol,Iowa,Ohio State,NCAA,,Passed Pete Maravich for the NCAA Division I career scoring record.
-2024-03-23-caitlin-clark-kobe-5-alternate-bruce-lee,2024-03-23,caitlin-clark,nike-kobe-5-protro-alternate-bruce-lee,Iowa,Holy Cross,NCAA,,NCAA Tournament first round at Carver-Hawkeye Arena, a 91-65 win. She had 27 points, 10 assists and 8 rebounds.
+2024-03-23-caitlin-clark-kobe-5-alternate-bruce-lee,2024-03-23,caitlin-clark,nike-kobe-5-protro-alternate-bruce-lee,Iowa,Holy Cross,NCAA,,"NCAA Tournament first round at Carver-Hawkeye Arena, a 91-65 win. She had 27 points, 10 assists and 8 rebounds."
 2024-04-01-caitlin-clark-kobe-5-bruce-lee,2024-04-01,caitlin-clark,nike-kobe-5-protro-bruce-lee,Iowa,LSU,NCAA,,Elite Eight; she scored 41.
 2025-02-13-juju-watkins-kobe-6-sail-all-star,2025-02-13,juju-watkins,nike-kobe-6-protro-sail-all-star,USC,UCLA,NCAA,,70-61 win in the Battle of Los Angeles on the shoe's release day.
 2025-03-21-milaysia-fulwiley-curry-12-famlay,2025-03-21,milaysia-fulwiley,curry-12-famlay-milaysia-fulwiley-pe,South Carolina,Tennessee Tech,NCAA,,"NCAA Tournament first round, a 108-48 win."
@@ -17,13 +17,13 @@ id,date,player_id,shoe_id,team_at_time,opponent,league,photo_url,note
 2025-12-21-jazzy-davidson-sabrina-3-pe,2025-12-21,jazzy-davidson,nike-sabrina-3-jazzy-davidson-usc-pe,USC,California,NCAA,,61-57 win.
 2026-01-06-jazzy-davidson-sabrina-3-red-pe,2026-01-06,jazzy-davidson,nike-sabrina-3-jazzy-davidson-red-pe,USC,Oregon,NCAA,,"71-66 loss, with Sabrina Ionescu in attendance."
 2026-03-20-madison-booker-kd-19-pe,2026-03-20,madison-booker,nike-kd-19-madison-booker-texas-pe,Texas,Missouri State,NCAA,,On-court debut in an 87-45 NCAA Tournament first-round win.
-2026-11-02-katie-fiso-sabrina-4-oregon-black,2026-11-02,katie-fiso,nike-sabrina-4-oregon-wbb-black-pe,Oregon,Hawaii,NCAA,https://www.instagram.com/oregonwbb/,"Worn with black socks at Matthew Knight Arena. Teammates wore the same pair."
+2026-11-02-katie-fiso-sabrina-4-oregon-black,2026-11-02,katie-fiso,nike-sabrina-4-oregon-wbb-black-pe,Oregon,Hawaii,NCAA,https://www.instagram.com/oregonwbb/,Worn with black socks at Matthew Knight Arena. Teammates wore the same pair.
 2026-11-02-juju-watkins-nxxt-gen-usc-pe,2026-11-02,juju-watkins,nike-lebron-nxxt-gen-juju-usc-pe,USC,UNLV,NCAA,https://www.instagram.com/uscwbb/,"Her return after 588 days out with a torn ACL. 21 points in 25 minutes in a 100-68 win at T-Mobile Arena, Las Vegas."
 2021-02-15-oregon-wbb-kd-13-aunt-pearl,2021-02-15,,nike-kd-13-aunt-pearl-oregon-pe,Oregon,Stanford,NCAA,https://www.instagram.com/oregonwbb/,"63-61 home loss to No. 6 Stanford in Eugene, worn as a team."
 2024-02-16-oregon-wbb-sabrina-1-stomp-out-cancer,2024-02-16,,nike-sabrina-1-oregon-stomp-out-cancer-pe,Oregon,USC,NCAA,https://www.instagram.com/oregonwbb/,"Annual Pink Game at Matthew Knight Arena, an 88-51 loss to No. 10 USC."
 2023-02-03-oregon-wbb-gt-cut-2-pink-game,2023-02-03,,nike-gt-cut-2-oregon-pink-game-pe,Oregon,Colorado,NCAA,https://www.instagram.com/oregonwbb/,"Pink Game at Matthew Knight Arena, a 63-53 loss to Colorado. Worn by several players."
 2020-02-24-oregon-wbb-kd-12-aunt-pearl,2020-02-24,,nike-kd-12-aunt-pearl-oregon-pe,Oregon,Stanford,NCAA,https://www.instagram.com/oregonwbb/,"74-66 win at No. 4 Stanford on ESPN2, hours after Sabrina Ionescu spoke at the Kobe and Gianna Bryant memorial. Worn as a team."
-2018-02-19-oregon-wbb-kd-10-aunt-pearl,2018-02-19,,nike-kd-10-aunt-pearl-oregon,Oregon,UCLA,NCAA,https://www.instagram.com/oregonwbb/,"101-94 overtime win over No. 10 UCLA in the final home game of the season."
+2018-02-19-oregon-wbb-kd-10-aunt-pearl,2018-02-19,,nike-kd-10-aunt-pearl-oregon,Oregon,UCLA,NCAA,https://www.instagram.com/oregonwbb/,101-94 overtime win over No. 10 UCLA in the final home game of the season.
 2017-12-31-sabrina-ionescu-soldier-10-oregon,2017-12-31,sabrina-ionescu,nike-lebron-soldier-10-oregon-pe,Oregon,Washington,NCAA,https://www.instagram.com/oregonwbb/,"94-83 win in Eugene. Her eighth career triple-double (24 points, 14 rebounds, 10 assists) set the NCAA record."
 2026-11-02-addi-mack-curry-south-carolina,2026-11-02,addi-mack,curry-addi-mack-maryland,Maryland,South Carolina,NCAA,https://www.instagram.com/terrapinhoops/,"Season opener at Adidas Arena in Paris, a 101-93 loss to No. 1 South Carolina. Career-high 35 points, 31 in the second half."
 2026-11-02-liz-udeze-ja-3-hawaii,2026-11-02,liz-udeze,nike-ja-3-hawaii-pe,Hawaii,Oregon,NCAA,,At Oregon (Matthew Knight Arena).
@@ -31,3 +31,4 @@ id,date,player_id,shoe_id,team_at_time,opponent,league,photo_url,note
 2026-11-03-syracuse-wbb-sabrina-4,2026-11-03,,nike-sabrina-4-syracuse-pe,Syracuse,Sacred Heart,NCAA,,"Season opener at the JMA Wireless Dome, a 75-48 win. Worn by several Syracuse players."
 2026-11-03-syracuse-wbb-kobe-9,2026-11-03,,nike-kobe-9-em-protro-syracuse-pe,Syracuse,Sacred Heart,NCAA,,"Season opener at the JMA Wireless Dome, a 75-48 win. Worn by several Syracuse players."
 2026-11-05-amari-whiting-kobe-5-bruce-lee,2026-11-05,amari-whiting,nike-kobe-5-protro-bruce-lee,Iowa,Eastern Illinois,NCAA,,"Season opener at Carver-Hawkeye Arena, an 80-39 win. She had 4 points, 7 rebounds, 7 assists and 6 steals, in the same shoe Caitlin Clark wore for her scoring record."
+2023-10-15-caitlin-clark-kobe-6-grinch,2023-10-15,caitlin-clark,nike-kobe-6-protro-grinch,Iowa,DePaul,NCAA,,"Crossover at Kinnick exhibition at Kinnick Stadium, a 94-72 win in front of 55,646, the women's basketball attendance record. She had a triple-double: 34 points, 11 rebounds and 10 assists."
